@@ -19,13 +19,12 @@ class TipUITests {
                 TipTimeLayout()
             }
         }
-    composeTestRule.onNodeWithText("Bill Amount")
-        .performTextInput("10")
-    composeTestRule.onNodeWithText("Tip Parentage")
-        .performTextInput("20")
-    val expectedTip = NumberFormat.getCurrencyInstance().format(2)
-    composeTestRule.onNodeWithText("Tip Amount : $expectedTip")
-        .assertExists("No node with this text was found.")
-
+        composeTestRule.onNodeWithText("Bill Amount")
+            .performTextInput("10")
+        composeTestRule.onNodeWithText("Tip Percentage")
+            .performTextInput("20")
+        val expectedTip = NumberFormat.getCurrencyInstance().format(2)
+        composeTestRule.onNodeWithText("Tip Amount: $expectedTip").
+        assertExists("No node with this text was found.")
     }
 }
