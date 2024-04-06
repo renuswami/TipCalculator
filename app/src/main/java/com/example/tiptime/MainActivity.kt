@@ -48,6 +48,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.material3.Icon
+import com.example.tiptime.components.EditNumber
 
 
 class MainActivity : ComponentActivity() {
@@ -71,9 +72,10 @@ fun TipTimeLayout() {
     var amountInput by remember { mutableStateOf("") }
     var tipInput by remember { mutableStateOf("") }
     var roundUp by remember { mutableStateOf(false) }
-    val amount = amountInput.toDoubleOrNull() ?: 0.0
-    val tipPercent = tipInput.toDoubleOrNull() ?: 0.0
-    val tip = calculateTip(amount, tipPercent, roundUp)
+    var amount = amountInput.toDoubleOrNull() ?: 0.0
+    var tipPercent = tipInput.toDoubleOrNull() ?: 0.0
+    val tip = calculateTip(amountInput.toDouble(), tipInput.toDouble(), roundUp)
+
 
     Column(
         modifier = Modifier
@@ -89,14 +91,14 @@ fun TipTimeLayout() {
                 .padding(bottom = 16.dp, top = 40.dp)
                 .align(alignment = Alignment.Start)
         )
-        EditNumberField(
+       /* EditNumberField(
             label = R.string.bill_amount,
             keyboardOptions = KeyboardOptions.Default.copy(
                 keyboardType = KeyboardType.Number,
                 imeAction = ImeAction.Next
             ),
-            value = amountInput,
-            onValueChange = {amountInput = it },
+            value = amountInput.value,
+            onValueChange = {amountInput.value = it },
             leadingIcon = R.drawable.money,
             modifier = Modifier
                 .padding(bottom = 32.dp)
@@ -114,7 +116,16 @@ fun TipTimeLayout() {
             modifier = Modifier
                 .padding(bottom = 32.dp)
                 .fillMaxWidth()
-        )
+        )*/
+
+        EditNumber(label = R.string.bill_amount, value = amountInput){
+            amountInput = it
+        }
+
+        EditNumber(label = R.string.how_was_the_service, value = tipInput){
+            tipInput = it
+        }
+
         RoundTheTipRow(
             roundUp = roundUp,
             onRoundUpChanged = { roundUp = it },
