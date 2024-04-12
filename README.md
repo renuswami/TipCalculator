@@ -1,24 +1,18 @@
-Tip Time - Solution Code
-=================================
+# TipTime App
 
-Starter code for the [Android Basics with Compose](https://developer.android.com/courses/android-basics-compose/course): Tip Time app.
+The TipTime App is a simple Android application built using Jetpack Compose. It allows users to calculate tips based on the bill amount, tip percentage, and an option to round up the tip.
 
+## Features
 
-Introduction
-------------
-The Tip Time app contains various UI elements for calculating a tip,
-teaching about user input, and State in Compose.
+* Calculate tip based on bill amount and tip percentage.
+* Option to round up the tip to the nearest whole number.
+* Clean and intuitive user interface using Jetpack Compose.
+  
+## Screenshots
 
+![Screenshot 2024-04-06 231626](https://github.com/renuswami/TipCalculator/assets/121007900/d1af429f-18eb-4bf4-88bb-8c25dcfbcb37)
 
-Pre-requisites
---------------
-* Experience with Kotlin syntax.
-* How to create and run a project in Android Studio.
-
-
-Getting Started
----------------
-1. Install Android Studio, if you don't already have it.
-2. Download the sample.
-3. Import the sample into Android Studio.
-4. Build and run the sample.
+## Dependencies
+* AndroidX libraries
+* Jetpack Compose
+* Material Design Components
